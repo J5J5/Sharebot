@@ -62,7 +62,7 @@ async def forward_random_messages():
                             chat_id=target_channel,
                             audio=message_to_forward.audio.file_id
                         )
-        await asyncio.sleep(7200)  # Wait for 10 seconds
+        await asyncio.sleep(21600)  # Wait for 10 seconds
 
 async def start_forwarding_task():
     """Initiate the message forwarding task."""
