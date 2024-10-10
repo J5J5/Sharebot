@@ -72,7 +72,7 @@ async def start_forwarding_task():
 async def start(client, message):
     """Start the forwarding task when the bot is started."""
     await start_forwarding_task()
-@app.on_message(filters.command("help")
+@app.on_message(filters.command("help"))
 async def help(client, message):
     await message.reply("""
 /add username - to add group 
