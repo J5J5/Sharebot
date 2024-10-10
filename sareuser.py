@@ -62,7 +62,7 @@ async def forward_random_messages():
                             chat_id=target_channel,
                             audio=message_to_forward.audio.file_id
                         )
-        await asyncio.sleep(21600)  # Wait for 10 seconds
+        await asyncio.sleep(14400)  # Wait for 10 seconds
 
 async def start_forwarding_task():
     """Initiate the message forwarding task."""
@@ -72,7 +72,13 @@ async def start_forwarding_task():
 async def start(client, message):
     """Start the forwarding task when the bot is started."""
     await start_forwarding_task()
-
+@app.on_message(filters.command("help")
+async def help(client, message):
+    await message.reply("""
+/add username - to add group 
+/rem username - to remove group
+/toggle - to start the share
+/start - to start the task""")
 
 if __name__ == "__main__":
     app.run()
